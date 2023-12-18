@@ -42,7 +42,7 @@ class Program
         {
             connection.Open();
 
-            // Check if the database exists
+            //SQL commando som kun er 
             string checkDatabaseSql = $"SELECT database_id FROM sys.databases WHERE name = '{databaseName}'";
 
             using (SqlCommand command = new SqlCommand(checkDatabaseSql, connection))
@@ -70,7 +70,6 @@ class Program
         {
             connection.Open();
 
-            // Laver vores Databasetabel
             CreateTable(connection);
 
             string sql = "INSERT INTO Persons (FirstName, LastName) VALUES (@FirstName, @LastName)";

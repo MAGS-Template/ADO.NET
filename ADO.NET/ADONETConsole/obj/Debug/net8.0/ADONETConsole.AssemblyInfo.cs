@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ADONETConsole")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6f3e86bb0b69efc7f3f86d10e4051fa1faa7d9f1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4eba2abc9e8c9f4b3d0648793d2bc815a67970c9")]
 [assembly: System.Reflection.AssemblyProductAttribute("ADONETConsole")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ADONETConsole")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
