@@ -1,0 +1,201 @@
+﻿@page "/Database"
+@using System.Data.SqlClient
+
+<h1>Database Component</h1>
+
+<input @bind="firstName" placeholder="First Name" />
+<input @bind="lastName" placeholder="Last Name" />
+
+<button @onclick="InsertData">Insert</button>
+
+@if (persons != null)
+{
+    foreach (var person in persons)
+    {
+        <div class="card">
+            <div class="card-body">
+                <div class="card-content">
+                    <h5 class="card-title">PersonID: @person.PersonID</h5>
+                    <div class="name-container">
+                        <p class="first-name">FirstName: @person.FirstName</p>
+                        <p class="last-name">LastName: @person.LastName</p>
+                    </div>
+                </div>
+                <div class="button-container">
+                    <button @onclick="() => EditData(person.PersonID)">Edit</button>
+                    <button @onclick="() => DeleteData(person.PersonID)">Delete</button>
+                </div>
+            </div>
+        </div>
+    }
+}
+
+
+<style>
+    .card {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin: 10px;
+    }
+
+    input {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+        input:focus {
+            border: 1px solid #555;
+        }
+
+    button {
+        padding: 10px 20px;
+        margin: 10px 0;
+        border: none;
+        border-radius: 4px;
+        background-color: #0a0a23;
+        color: #fff;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+        button:hover {
+            background-color: #002ead;
+        }
+
+        button:active {
+            background-color: #ffbf00;
+        }
+
+    .delete-button {
+        text-align: right;
+    }
+
+    .card-body {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .button-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .name-container {
+        display: flex;
+        flex-direction: column;
+    }
+</style>
+
+@code {
+    private string firstName = "John";
+    private string lastName = "Doe";
+    private List<Person> persons;
+
+    protected override void OnInitialized()
+    {
+        ReadData();
+    }
+
+    private void InsertData()
+    {
+        string connectionString = $"Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=ADONET;Integrated Security=True;Connect Timeout=30;Encrypt=False;";
+
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            connection.Open();
+
+            string sql = "INSERT INTO Persons (FirstName, LastName) VALUES (@FirstName, @LastName)";
+
+            using (SqlCommand command = new SqlCommand(sql, connection))
+            {
+                command.Parameters.AddWithValue("@FirstName", firstName);
+                command.Parameters.AddWithValue("@LastName", lastName);
+
+                command.ExecuteNonQuery();
+            }
+        }
+        ReadData();
+    }
+
+    private void ReadData()
+    {
+        string connectionString = $"Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=ADONET;Integrated Security=True;Connect Timeout=30;Encrypt=False;";
+
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            connection.Open();
+
+            string sql = "SELECT * FROM Persons";
+
+            using (SqlCommand command = new SqlCommand(sql, connection))
+            {
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    persons = new List<Person>();
+                    while (reader.Read())
+                    {
+                        persons.Add(new Person
+                            {
+                                PersonID = Convert.ToInt32(reader["PersonID"]),
+                                FirstName = reader["FirstName"].ToString(),
+                                LastName = reader["LastName"].ToString()
+                            });
+                    }
+                }
+            }
+        }
+    }
+    private void DeleteData(int personID)
+    {
+        string connectionString = $"Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=ADONET;Integrated Security=True;Connect Timeout=30;Encrypt=False;";
+
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            connection.Open();
+
+            string sql = "DELETE FROM Persons WHERE PersonID = @PersonID";
+
+            using (SqlCommand command = new SqlCommand(sql, connection))
+            {
+                command.Parameters.AddWithValue("@PersonID", personID);
+
+                command.ExecuteNonQuery();
+            }
+        }
+        ReadData();
+    }
+    private void EditData(int personID)
+    {
+        string connectionString = $"Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=ADONET;Integrated Security=True;Connect Timeout=30;Encrypt=False;";
+
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            connection.Open();
+
+            string sql = "UPDATE Persons SET FirstName = @FirstName, LastName = @LastName WHERE PersonID = @PersonID";
+
+            using (SqlCommand command = new SqlCommand(sql, connection))
+            {
+                command.Parameters.AddWithValue("@FirstName", firstName);
+                command.Parameters.AddWithValue("@LastName", lastName);
+                command.Parameters.AddWithValue("@PersonID", personID);
+
+                command.ExecuteNonQuery();
+            }
+        }
+        ReadData();
+    }
+
+
+    public class Person
+    {
+        public int PersonID { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+    }
+}
