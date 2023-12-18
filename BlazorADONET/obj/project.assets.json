@@ -476,11 +476,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\MAGS\\Documents\\GitHub\\ADO.NET\\ADONETConsole\\ADONETConsole.csproj",
-      "projectName": "ADONETConsole",
-      "projectPath": "C:\\Users\\MAGS\\Documents\\GitHub\\ADO.NET\\ADONETConsole\\ADONETConsole.csproj",
+      "projectUniqueName": "C:\\Users\\MAGS\\Documents\\GitHub\\ADO.NET\\BlazorADONET\\BlazorADONET.csproj",
+      "projectName": "BlazorADONET",
+      "projectPath": "C:\\Users\\MAGS\\Documents\\GitHub\\ADO.NET\\BlazorADONET\\BlazorADONET.csproj",
       "packagesPath": "C:\\Users\\MAGS\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\MAGS\\Documents\\GitHub\\ADO.NET\\ADONETConsole\\obj\\",
+      "outputPath": "C:\\Users\\MAGS\\Documents\\GitHub\\ADO.NET\\BlazorADONET\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -531,6 +531,9 @@
         "assetTargetFallback": true,
         "warn": true,
         "frameworkReferences": {
+          "Microsoft.AspNetCore.App": {
+            "privateAssets": "none"
+          },
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }

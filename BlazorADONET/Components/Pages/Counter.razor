@@ -1,0 +1,85 @@
+﻿@page "/counter"
+@using System.Data.SqlClient
+
+<h1>Person Component</h1>
+
+<input @bind="firstName" placeholder="First Name" />
+<input @bind="lastName" placeholder="Last Name" />
+
+<button @onclick="InsertData">Insert</button>
+
+@if (persons != null)
+{
+    foreach (var person in persons)
+    {
+        <p>PersonID: @person.PersonID, FirstName: @person.FirstName, LastName: @person.LastName</p>
+    }
+}
+
+@code {
+    private string firstName = "John";
+    private string lastName = "Doe";
+    private List<Person> persons;
+
+    protected override void OnInitialized()
+    {
+        ReadData();
+    }
+
+    private void InsertData()
+    {
+        string connectionString = $"Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=ADONET;Integrated Security=True;Connect Timeout=30;Encrypt=False;";
+
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            connection.Open();
+
+            string sql = "INSERT INTO Persons (FirstName, LastName) VALUES (@FirstName, @LastName)";
+
+            using (SqlCommand command = new SqlCommand(sql, connection))
+            {
+                command.Parameters.AddWithValue("@FirstName", firstName);
+                command.Parameters.AddWithValue("@LastName", lastName);
+
+                command.ExecuteNonQuery();
+            }
+        }
+        ReadData();
+    }
+
+    private void ReadData()
+    {
+        string connectionString = $"Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=ADONET;Integrated Security=True;Connect Timeout=30;Encrypt=False;";
+
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            connection.Open();
+
+            string sql = "SELECT * FROM Persons";
+
+            using (SqlCommand command = new SqlCommand(sql, connection))
+            {
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    persons = new List<Person>();
+                    while (reader.Read())
+                    {
+                        persons.Add(new Person
+                            {
+                                PersonID = Convert.ToInt32(reader["PersonID"]),
+                                FirstName = reader["FirstName"].ToString(),
+                                LastName = reader["LastName"].ToString()
+                            });
+                    }
+                }
+            }
+        }
+    }
+
+    public class Person
+    {
+        public int PersonID { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+    }
+}
