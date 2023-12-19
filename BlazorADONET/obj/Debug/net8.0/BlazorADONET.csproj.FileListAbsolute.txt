@@ -74,3 +74,5 @@ C:\Users\MAGS\Documents\GitHub\ADO.NET\BlazorADONET\obj\Debug\net8.0\refint\Blaz
 C:\Users\MAGS\Documents\GitHub\ADO.NET\BlazorADONET\obj\Debug\net8.0\BlazorADONET.pdb
 C:\Users\MAGS\Documents\GitHub\ADO.NET\BlazorADONET\obj\Debug\net8.0\BlazorADONET.genruntimeconfig.cache
 C:\Users\MAGS\Documents\GitHub\ADO.NET\BlazorADONET\obj\Debug\net8.0\ref\BlazorADONET.dll
+C:\Users\MAGS\Documents\GitHub\ADO.NET\BlazorADONET\bin\Debug\net8.0\Domain Models.dll
+C:\Users\MAGS\Documents\GitHub\ADO.NET\BlazorADONET\bin\Debug\net8.0\Domain Models.pdb

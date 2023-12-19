@@ -1,5 +1,6 @@
 ﻿@page "/Database"
 @using System.Data.SqlClient
+@using Domain_Models
 
 <h1>Database Component</h1>
 
@@ -189,13 +190,5 @@
             }
         }
         ReadData();
-    }
-
-
-    public class Person
-    {
-        public int PersonID { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
     }
 }

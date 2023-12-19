@@ -146,6 +146,16 @@
             "rid": "win"
           }
         }
+      },
+      "Domain Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/Domain Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Domain Models.dll": {}
+        }
       }
     }
   },
@@ -462,10 +472,16 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "Domain Models/1.0.0": {
+      "type": "project",
+      "path": "../Domain Models/Domain Models.csproj",
+      "msbuildProject": "../Domain Models/Domain Models.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "Domain Models >= 1.0.0",
       "System.Data.SqlClient >= 4.8.5"
     ]
   },
@@ -501,7 +517,11 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\MAGS\\Documents\\GitHub\\ADO.NET\\Domain Models\\Domain Models.csproj": {
+              "projectPath": "C:\\Users\\MAGS\\Documents\\GitHub\\ADO.NET\\Domain Models\\Domain Models.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
