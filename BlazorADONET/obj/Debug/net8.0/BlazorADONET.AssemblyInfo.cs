@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BlazorADONET")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a2d97325ad5a442aa75a5c6e577e6078a47be756")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("BlazorADONET")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BlazorADONET")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
