@@ -998,9 +998,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\MAGS\\Documents\\GitHub\\ADO.NET\\API\\API.csproj",
-      "projectName": "API",
-      "projectPath": "C:\\Users\\MAGS\\Documents\\GitHub\\ADO.NET\\API\\API.csproj",
+      "projectUniqueName": "C:\\Users\\MAGS\\Documents\\GitHub\\ADO.NET\\API\\API-ADONET.csproj",
+      "projectName": "API-ADONET",
+      "projectPath": "C:\\Users\\MAGS\\Documents\\GitHub\\ADO.NET\\API\\API-ADONET.csproj",
       "packagesPath": "C:\\Users\\MAGS\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\MAGS\\Documents\\GitHub\\ADO.NET\\API\\obj\\",
       "projectStyle": "PackageReference",

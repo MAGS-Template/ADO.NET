@@ -476,9 +476,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\MAGS\\Documents\\GitHub\\ADO.NET\\ADONETConsole\\ADONETConsole.csproj",
-      "projectName": "ADONETConsole",
-      "projectPath": "C:\\Users\\MAGS\\Documents\\GitHub\\ADO.NET\\ADONETConsole\\ADONETConsole.csproj",
+      "projectUniqueName": "C:\\Users\\MAGS\\Documents\\GitHub\\ADO.NET\\ADONETConsole\\Console-ADONET.csproj",
+      "projectName": "Console-ADONET",
+      "projectPath": "C:\\Users\\MAGS\\Documents\\GitHub\\ADO.NET\\ADONETConsole\\Console-ADONET.csproj",
       "packagesPath": "C:\\Users\\MAGS\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\MAGS\\Documents\\GitHub\\ADO.NET\\ADONETConsole\\obj\\",
       "projectStyle": "PackageReference",

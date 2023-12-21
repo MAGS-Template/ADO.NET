@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8zpnG/G6odo13JVmjCK8IDCpv3f1c+p60o9qIXTuBZczkiA797XIbdx2j9ZlPe89pq3vDkuw9wWJ8KLOT3z8HQ==",
+  "dgSpecHash": "q6pgdXSl6W8Ir38DeddIhqeSmGiTwxA7T282Jx8716svBNPgt+it44i7IMfcdZsdOTBYjRSbAlQiMm7V9ZBg+Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\MAGS\\Documents\\GitHub\\ADO.NET\\ADONETConsole\\ADONETConsole.csproj",
+  "projectFilePath": "C:\\Users\\MAGS\\Documents\\GitHub\\ADO.NET\\ADONETConsole\\Console-ADONET.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\MAGS\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\MAGS\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",

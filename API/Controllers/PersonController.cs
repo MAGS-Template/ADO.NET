@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Data.SqlClient;
 using Domain_Models;
+
 [ApiController]
 [Route("[controller]")]
 public class PersonController : ControllerBase
@@ -127,7 +128,6 @@ public class PersonController : ControllerBase
                 }
             }
         }
-
         return persons;
     }
 }

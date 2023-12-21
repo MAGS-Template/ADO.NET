@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34309.116
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ADONETConsole", "ADONETConsole\ADONETConsole.csproj", "{A2F3205A-C254-413C-8175-926A67551DBA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Console-ADONET", "ADONETConsole\Console-ADONET.csproj", "{A2F3205A-C254-413C-8175-926A67551DBA}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorADONET", "BlazorADONET\BlazorADONET.csproj", "{F26A90B3-C1FD-4A25-9A98-733A3E3694E0}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain Models", "Domain Models\Domain Models.csproj", "{BD33271E-F472-451A-B698-43A9E966E9FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "API\API.csproj", "{E6E0186B-C061-416E-A69A-50794E0D1271}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API-ADONET", "API\API-ADONET.csproj", "{E6E0186B-C061-416E-A69A-50794E0D1271}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
