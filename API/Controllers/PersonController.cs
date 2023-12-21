@@ -5,7 +5,14 @@ using Domain_Models;
 [Route("[controller]")]
 public class PersonController : ControllerBase
 {
-    private string connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=ADONET;Integrated Security=True;Connect Timeout=30;Encrypt=False;";
+    private IConfiguration _configuration;
+
+    public PersonController(IConfiguration configuration)
+    {
+        _configuration = configuration;
+    }
+
+    private string connectionString => _configuration.GetConnectionString("ADONET");
 
     [HttpPost]
     public void Create(Person person)
