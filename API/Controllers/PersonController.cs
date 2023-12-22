@@ -16,7 +16,7 @@ public class PersonController : ControllerBase
     private string connectionString => _configuration.GetConnectionString("ADONET");
 
     [HttpPost]
-    public void Create(Person person)
+    public string Create(Person person)
     {
         using (SqlConnection connection = new SqlConnection(connectionString))
         {
@@ -31,6 +31,7 @@ public class PersonController : ControllerBase
                 command.ExecuteNonQuery();
             }
         }
+        return $"{person.FirstName} {person.LastName} er nu oprettet i databasen" ;
     }
 
     [HttpGet("{id}")]
@@ -66,7 +67,7 @@ public class PersonController : ControllerBase
     }
 
     [HttpPut("{id}")]
-    public void Update(int id, Person person)
+    public Person Update(int id, Person person)
     {
         using (SqlConnection connection = new SqlConnection(connectionString))
         {
@@ -82,6 +83,7 @@ public class PersonController : ControllerBase
                 command.ExecuteNonQuery();
             }
         }
+        return person;
     }
 
     [HttpDelete("{id}")]
