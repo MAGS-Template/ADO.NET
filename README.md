@@ -2,7 +2,7 @@
 Eksempler til ADO.NET - Læs mere om ADO.NET her [Notion ADO.NET](https://mercantec.notion.site/ADO-NET-3b3c18cd2eba409f824ae82c6e9d933c?pvs=4)
 Enten skal man manuelt sætte databasen op eller starte med at køre consol applikationen en gang. 
 
-Main branchen er dedikeret til det mest simple database eksempel. For en mere compleks og større database, se under [Complex-SQL](https://github.com/MAGS-Template/ADO.NET/tree/Complex-SQL)
+Main branchen er dedikeret til det mest simple database eksempel. For en mere compleks og større database, se under branchen [Complex-SQL](https://github.com/MAGS-Template/ADO.NET/tree/Complex-SQL)
 ## Opbygning af projekt med ADO.NET
 ### ADONETConsole
 Her er en consoleapp, som implementeret meget lavpraktisk. Den bruger ikke et objekt, men bare 2 strenge til at integrerer med databasen.
