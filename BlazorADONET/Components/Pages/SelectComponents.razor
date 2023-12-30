@@ -1,0 +1,50 @@
+﻿@page "/SelectComponents"
+@using System.Data.SqlClient
+@using BlazorADONET.Services
+@using Domain_Models
+@using RazorComponents
+@inject IDatabaseService DatabaseService
+
+<h1>Select Component</h1>
+
+<select @bind="selectedOption">
+    @foreach (var columnName in columnNames)
+    {
+        <option value="@columnName">@columnName</option>
+    }
+</select>
+
+
+<input @bind="searchValue" placeholder="Enter value" />
+
+<button @onclick="Search">Search</button>
+
+@if (persons != null && persons.Count >= 1)
+{
+    foreach (var person in persons)
+    {
+        <Card person="@person" />
+    }
+}
+else
+{
+    <NoData/>
+}
+
+@code {
+    private string selectedOption = "PersonID";
+    private string searchValue = "";
+    private List<Person> persons;
+    List<string> columnNames = new List<string>();
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        columnNames = DatabaseService.GetColumnNames();
+    }
+    private void Search()
+    {
+        persons = DatabaseService.SearchPersons(selectedOption, searchValue);
+    }
+
+}

@@ -1,3 +1,5 @@
+@import '_content/RazorComponents/RazorComponents.bundle.scp.css';
+
 /* _content/BlazorADONET/Components/Layout/MainLayout.razor.rz.scp.css */
 .page[b-ij1x7eg3z7] {
     position: relative;
@@ -201,3 +203,174 @@ main[b-ij1x7eg3z7] {
         overflow-y: auto;
     }
 }
+/* _content/BlazorADONET/Components/Pages/API.razor.rz.scp.css */
+    .container[b-7jb2heabon] {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+        gap: 20px;
+    }
+
+    .card[b-7jb2heabon] {
+        width: 100%;
+        border: 1px solid black;
+        border-radius: 7px;
+    }
+
+    .card-title[b-7jb2heabon] {
+        color: rebeccapurple;
+    }
+
+    .card-text[b-7jb2heabon] {
+        color: #757575; /* Lightest grey with 4.5:1 contrast over white */
+        line-height: 1.5; /* Space between lines of the paragraph */
+    }
+/* _content/BlazorADONET/Components/Pages/CRUD.razor.rz.scp.css */
+.card[b-y46t81lpuy] {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+}
+
+input[b-y46t81lpuy] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+    input:focus[b-y46t81lpuy] {
+        border: 1px solid #555;
+    }
+
+button[b-y46t81lpuy] {
+    padding: 10px 20px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 4px;
+    background-color: #0a0a23;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    button:hover[b-y46t81lpuy] {
+        background-color: #002ead;
+    }
+
+    button:active[b-y46t81lpuy] {
+        background-color: #ffbf00;
+    }
+
+.delete-button[b-y46t81lpuy] {
+    text-align: right;
+}
+
+.card-body[b-y46t81lpuy] {
+    display: flex;
+    justify-content: space-between;
+}
+
+.button-container[b-y46t81lpuy] {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.name-container[b-y46t81lpuy] {
+    display: flex;
+    flex-direction: column;
+}
+/* _content/BlazorADONET/Components/Pages/Select.razor.rz.scp.css */
+<style >
+.card[b-i0kpzcyurd] {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.card-container[b-i0kpzcyurd] {
+    display: grid;
+    gap: 20px;
+}
+
+select[b-i0kpzcyurd] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    width: 20%;
+    background: #f1f1f1;
+}
+
+input[b-i0kpzcyurd] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    width: 20%;
+    background: #f1f1f1;
+}
+
+button[b-i0kpzcyurd] {
+    padding: 10px;
+    font-size: 17px;
+    background: #2196F3;
+    color: white;
+    border: 1px solid grey;
+    cursor: pointer;
+    width: 20%;
+}
+
+    button:hover[b-i0kpzcyurd] {
+        background: #0b7dda;
+    }
+
+</style[b-i0kpzcyurd] >
+/* _content/BlazorADONET/Components/Pages/SelectComponents.razor.rz.scp.css */
+<style >
+.card[b-648mjcf1pl] {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.card-container[b-648mjcf1pl] {
+    display: grid;
+    gap: 20px;
+}
+
+select[b-648mjcf1pl] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    width: 20%;
+    background: #f1f1f1;
+}
+
+input[b-648mjcf1pl] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    width: 20%;
+    background: #f1f1f1;
+}
+
+button[b-648mjcf1pl] {
+    padding: 10px;
+    font-size: 17px;
+    background: #2196F3;
+    color: white;
+    border: 1px solid grey;
+    cursor: pointer;
+    width: 20%;
+}
+
+    button:hover[b-648mjcf1pl] {
+        background: #0b7dda;
+    }
+
+</style[b-648mjcf1pl] >

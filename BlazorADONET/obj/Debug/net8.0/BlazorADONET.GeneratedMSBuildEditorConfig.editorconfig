@@ -22,24 +22,12 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBcHAucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/MAGS/Documents/GitHub/ADO.NET/BlazorADONET/Components/Pages/API.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBUEkucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/MAGS/Documents/GitHub/ADO.NET/BlazorADONET/Components/Pages/CRUD.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDUlVELnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/MAGS/Documents/GitHub/ADO.NET/BlazorADONET/Components/Pages/Error.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFcnJvci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/MAGS/Documents/GitHub/ADO.NET/BlazorADONET/Components/Pages/Home.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIb21lLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/MAGS/Documents/GitHub/ADO.NET/BlazorADONET/Components/Pages/Select.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xTZWxlY3QucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/MAGS/Documents/GitHub/ADO.NET/BlazorADONET/Components/Routes.razor]
@@ -57,3 +45,19 @@ build_metadata.AdditionalFiles.CssScope = b-ij1x7eg3z7
 [C:/Users/MAGS/Documents/GitHub/ADO.NET/BlazorADONET/Components/Layout/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTmF2TWVudS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-coi9qooz24
+
+[C:/Users/MAGS/Documents/GitHub/ADO.NET/BlazorADONET/Components/Pages/API.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBUEkucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-7jb2heabon
+
+[C:/Users/MAGS/Documents/GitHub/ADO.NET/BlazorADONET/Components/Pages/CRUD.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDUlVELnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-y46t81lpuy
+
+[C:/Users/MAGS/Documents/GitHub/ADO.NET/BlazorADONET/Components/Pages/Select.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xTZWxlY3QucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-i0kpzcyurd
+
+[C:/Users/MAGS/Documents/GitHub/ADO.NET/BlazorADONET/Components/Pages/SelectComponents.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xTZWxlY3RDb21wb25lbnRzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-648mjcf1pl

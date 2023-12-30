@@ -76,3 +76,10 @@ C:\Users\MAGS\Documents\GitHub\ADO.NET\BlazorADONET\obj\Debug\net8.0\BlazorADONE
 C:\Users\MAGS\Documents\GitHub\ADO.NET\BlazorADONET\obj\Debug\net8.0\ref\BlazorADONET.dll
 C:\Users\MAGS\Documents\GitHub\ADO.NET\BlazorADONET\bin\Debug\net8.0\Domain Models.dll
 C:\Users\MAGS\Documents\GitHub\ADO.NET\BlazorADONET\bin\Debug\net8.0\Domain Models.pdb
+C:\Users\MAGS\Documents\GitHub\ADO.NET\BlazorADONET\bin\Debug\net8.0\RazorComponents.staticwebassets.runtime.json
+C:\Users\MAGS\Documents\GitHub\ADO.NET\BlazorADONET\bin\Debug\net8.0\RazorComponents.dll
+C:\Users\MAGS\Documents\GitHub\ADO.NET\BlazorADONET\bin\Debug\net8.0\RazorComponents.pdb
+C:\Users\MAGS\Documents\GitHub\ADO.NET\BlazorADONET\obj\Debug\net8.0\scopedcss\Components\Pages\SelectComponents.razor.rz.scp.css
+C:\Users\MAGS\Documents\GitHub\ADO.NET\BlazorADONET\obj\Debug\net8.0\scopedcss\Components\Pages\Select.razor.rz.scp.css
+C:\Users\MAGS\Documents\GitHub\ADO.NET\BlazorADONET\obj\Debug\net8.0\scopedcss\Components\Pages\CRUD.razor.rz.scp.css
+C:\Users\MAGS\Documents\GitHub\ADO.NET\BlazorADONET\obj\Debug\net8.0\scopedcss\Components\Pages\API.razor.rz.scp.css

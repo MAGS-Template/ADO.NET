@@ -1,0 +1,18 @@
+@using Domain_Models
+
+<div class="card">
+    <div class="card-body">
+        <div class="card-content">
+            <h5 class="card-title">PersonID: @person.PersonID</h5>
+            <div class="name-container">
+                <p class="first-name">FirstName: @person.FirstName</p>
+                <p class="last-name">LastName: @person.LastName</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public Person person { get; set; }
+   }

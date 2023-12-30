@@ -1,9 +1,10 @@
 ﻿@page "/API"
 @using Domain_Models
 @using System.Net.Http
-<h3>API</h3>
+@using RazorComponents
 @inject HttpClient Http
 
+<h3>API</h3>
 <div class="container">
     @if (Persons != null)
     {
@@ -18,16 +19,19 @@
                 </div>
             </div>
         }
+        foreach (var person in Persons)
+        {
+            <Card person="@person" />
+        }
     }
     else
     {
-        <p>No persons found.</p>
+        <NoData />
     }
 </div>
 
 @code {
     public List<Person> Persons { get; set; }
-    public Person NewPerson { get; set; } = new Person();
 
     protected override async Task OnInitializedAsync()
     {
@@ -64,27 +68,3 @@
         }
     }
 }
-
-
-<style>
-    .container {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-        gap: 20px;
-    }
-
-    .card {
-        width: 100%;
-        border: 1px solid black;
-        border-radius: 7px;
-    }
-
-    .card-title {
-        color: rebeccapurple;
-    }
-
-    .card-text {
-        color: #757575; /* Lightest grey with 4.5:1 contrast over white */
-        line-height: 1.5; /* Space between lines of the paragraph */
-    }
-</style>

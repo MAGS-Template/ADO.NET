@@ -1,0 +1,45 @@
+<style >
+.card[b-648mjcf1pl] {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.card-container[b-648mjcf1pl] {
+    display: grid;
+    gap: 20px;
+}
+
+select[b-648mjcf1pl] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    width: 20%;
+    background: #f1f1f1;
+}
+
+input[b-648mjcf1pl] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    width: 20%;
+    background: #f1f1f1;
+}
+
+button[b-648mjcf1pl] {
+    padding: 10px;
+    font-size: 17px;
+    background: #2196F3;
+    color: white;
+    border: 1px solid grey;
+    cursor: pointer;
+    width: 20%;
+}
+
+    button:hover[b-648mjcf1pl] {
+        background: #0b7dda;
+    }
+
+</style[b-648mjcf1pl] >

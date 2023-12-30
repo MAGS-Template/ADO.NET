@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("9e30ac9f-a52a-432f-b9aa-37deeb077b9e")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("BlazorADONET")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+010e61a7f7a77d395bbd071dc0849f0fbd108a4b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("BlazorADONET")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BlazorADONET")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

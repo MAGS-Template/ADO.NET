@@ -1,0 +1,57 @@
+.card[b-waqo359d2h] {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+}
+
+input[b-waqo359d2h] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+    input:focus[b-waqo359d2h] {
+        border: 1px solid #555;
+    }
+
+button[b-waqo359d2h] {
+    padding: 10px 20px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 4px;
+    background-color: #0a0a23;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    button:hover[b-waqo359d2h] {
+        background-color: #002ead;
+    }
+
+    button:active[b-waqo359d2h] {
+        background-color: #ffbf00;
+    }
+
+.delete-button[b-waqo359d2h] {
+    text-align: right;
+}
+
+.card-body[b-waqo359d2h] {
+    display: flex;
+    justify-content: space-between;
+}
+
+.button-container[b-waqo359d2h] {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.name-container[b-waqo359d2h] {
+    display: flex;
+    flex-direction: column;
+}
