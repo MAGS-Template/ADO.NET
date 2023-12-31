@@ -1,6 +1,0 @@
-C:\Users\MAGS\Documents\GitHub\ADO.NET\RazorCompnents\obj\Debug\net8.0\RazorCompnents.csproj.AssemblyReference.cache
-C:\Users\MAGS\Documents\GitHub\ADO.NET\RazorCompnents\obj\Debug\net8.0\RazorCompnents.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\MAGS\Documents\GitHub\ADO.NET\RazorCompnents\obj\Debug\net8.0\RazorCompnents.AssemblyInfoInputs.cache
-C:\Users\MAGS\Documents\GitHub\ADO.NET\RazorCompnents\obj\Debug\net8.0\RazorCompnents.AssemblyInfo.cs
-C:\Users\MAGS\Documents\GitHub\ADO.NET\RazorCompnents\obj\Debug\net8.0\RazorCompnents.csproj.CoreCompileInputs.cache
-C:\Users\MAGS\Documents\GitHub\ADO.NET\RazorCompnents\obj\Debug\net8.0\RazorCompnents.sourcelink.json
