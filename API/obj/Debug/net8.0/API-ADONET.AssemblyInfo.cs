@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("API-ADONET")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+14c0cd00964150c99b47d673d3d0d83791ca7d8f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("API-ADONET")]
 [assembly: System.Reflection.AssemblyTitleAttribute("API-ADONET")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
