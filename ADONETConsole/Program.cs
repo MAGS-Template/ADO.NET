@@ -15,6 +15,7 @@ class Program
         if (input == "PDB")
         {
             PopulateDatabase(connectionString);
+            ReadAndDisplayClasses(connectionString);
         }
     }
     private void Init()
@@ -69,11 +70,11 @@ class Program
            END";
                 cmd.ExecuteNonQuery();
 
-                // Check if Enrollment table exists
+                // Check if StudentClass table exists
                 cmd.CommandText = @"
-           IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Enrollment')
+           IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'StudentClass')
            BEGIN
-               CREATE TABLE Enrollment
+               CREATE TABLE StudentClass
                (
                   Id INT IDENTITY(1,1) PRIMARY KEY,
                   StudentId INT FOREIGN KEY REFERENCES Student(Id),
@@ -82,19 +83,35 @@ class Program
            END";
                 cmd.ExecuteNonQuery();
 
+                // Check if Department table exists
+                cmd.CommandText = @"
+            IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Department')
+            BEGIN
+                CREATE TABLE Department
+                (
+                    Id INT IDENTITY(1,1) PRIMARY KEY,
+                    CreatedAt DATETIME,
+                    UpdatedAt DATETIME,
+                    DepartmentName NVARCHAR(50)
+                )
+            END";
+                cmd.ExecuteNonQuery();
+
+
                 // Check if Teacher table exists
                 cmd.CommandText = @"
-           IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Teacher')
-           BEGIN
-               CREATE TABLE Teacher
-               (
-                  Id INT IDENTITY(1,1) PRIMARY KEY,
-                  CreatedAt DATETIME,
-                  UpdatedAt DATETIME,
-                  FirstName NVARCHAR(50),
-                  LastName NVARCHAR(50)
-               )
-           END";
+            IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Teacher')
+            BEGIN
+                CREATE TABLE Teacher
+                (
+                    Id INT IDENTITY(1,1) PRIMARY KEY,
+                    CreatedAt DATETIME,
+                    UpdatedAt DATETIME,
+                    FirstName NVARCHAR(50),
+                    LastName NVARCHAR(50),
+                    DepartmentId INT FOREIGN KEY REFERENCES Department(Id)
+                )
+            END";
                 cmd.ExecuteNonQuery();
 
                 // Check if TeacherClass table exists
@@ -111,6 +128,7 @@ class Program
                 cmd.ExecuteNonQuery();
             }
         }
+
 
         Console.WriteLine("Tables created successfully!");
     }
@@ -137,6 +155,15 @@ class Program
                 cmd.Parameters.AddWithValue("@UpdatedAt", DateTime.Now);
                 cmd.Parameters.AddWithValue("@ClassName", "Hoved forløb 2");
                 cmd.ExecuteNonQuery();
+
+                // Insert some data into the Department table
+                cmd.CommandText = "INSERT INTO Department (CreatedAt, UpdatedAt, DepartmentName) VALUES (@CreatedAt, @UpdatedAt, @DepartmentName)";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@CreatedAt", DateTime.Now);
+                cmd.Parameters.AddWithValue("@UpdatedAt", DateTime.Now);
+                cmd.Parameters.AddWithValue("@DepartmentName", "Computer Science");
+                cmd.ExecuteNonQuery();
+
 
 
                 // Get the IDs of the inserted classes
@@ -178,12 +205,12 @@ class Program
                 }
                 studentReader.Close();
 
-                // Insert some data into the Enrollment table
+                // Insert some data into the StudentClass table
                 foreach (int classId in classIds)
                 {
                     foreach (int studentId in studentIds)
                     {
-                        cmd.CommandText = "INSERT INTO Enrollment (StudentId, ClassId) VALUES (@StudentId, @ClassId)";
+                        cmd.CommandText = "INSERT INTO StudentClass (StudentId, ClassId) VALUES (@StudentId, @ClassId)";
                         cmd.Parameters.Clear();
                         cmd.Parameters.AddWithValue("@StudentId", studentId);
                         cmd.Parameters.AddWithValue("@ClassId", classId);
@@ -192,12 +219,13 @@ class Program
                 }
 
                 // Insert some data into the Teacher table
-                cmd.CommandText = "INSERT INTO Teacher (CreatedAt, UpdatedAt, FirstName, LastName) VALUES (@CreatedAt, @UpdatedAt, @FirstName, @LastName)";
+                cmd.CommandText = "INSERT INTO Teacher (CreatedAt, UpdatedAt, FirstName, LastName, DepartmentId) VALUES (@CreatedAt, @UpdatedAt, @FirstName, @LastName, @DepartmentId)";
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@CreatedAt", DateTime.Now);
                 cmd.Parameters.AddWithValue("@UpdatedAt", DateTime.Now);
                 cmd.Parameters.AddWithValue("@FirstName", "Bob");
                 cmd.Parameters.AddWithValue("@LastName", "Johnson");
+                cmd.Parameters.AddWithValue("@DepartmentId", 1);
                 cmd.ExecuteNonQuery();
 
                 cmd.CommandText = "INSERT INTO Teacher (CreatedAt, UpdatedAt, FirstName, LastName) VALUES (@CreatedAt, @UpdatedAt, @FirstName, @LastName)";
@@ -206,6 +234,7 @@ class Program
                 cmd.Parameters.AddWithValue("@UpdatedAt", DateTime.Now);
                 cmd.Parameters.AddWithValue("@FirstName", "Emma");
                 cmd.Parameters.AddWithValue("@LastName", "Williams");
+                cmd.Parameters.AddWithValue("@DepartmentId", 1);
                 cmd.ExecuteNonQuery();
 
                 // Get the IDs of the inserted teachers
@@ -259,7 +288,7 @@ class Program
                     reader.Close();
 
                     // Get all students for this class
-                    cmd.CommandText = "SELECT s.* FROM Student s INNER JOIN Enrollment e ON s.Id = e.StudentId WHERE e.ClassId = @ClassId";
+                    cmd.CommandText = "SELECT s.* FROM Student s INNER JOIN StudentClass e ON s.Id = e.StudentId WHERE e.ClassId = @ClassId";
                     cmd.Parameters.Clear();
                     cmd.Parameters.AddWithValue("@ClassId", classId);
                     reader = cmd.ExecuteReader();
@@ -275,7 +304,7 @@ class Program
                     reader.Close();
 
                     // Get all teachers for this class
-                    cmd.CommandText = "SELECT t.* FROM Teacher t INNER JOIN TeacherClass tc ON t.Id = tc.TeacherId WHERE tc.ClassId = @ClassId";
+                    cmd.CommandText = "SELECT t.*, d.DepartmentName FROM Teacher t INNER JOIN TeacherClass tc ON t.Id = tc.TeacherId INNER JOIN Department d ON t.DepartmentId = d.Id WHERE tc.ClassId = @ClassId";
                     cmd.Parameters.Clear();
                     cmd.Parameters.AddWithValue("@ClassId", classId);
                     reader = cmd.ExecuteReader();
@@ -286,7 +315,8 @@ class Program
                         int teacherId = Convert.ToInt32(reader["Id"]);
                         string firstName = Convert.ToString(reader["FirstName"]);
                         string lastName = Convert.ToString(reader["LastName"]);
-                        Console.WriteLine($" Teacher: {teacherId}, Name: {firstName} {lastName}");
+                        string departmentName = Convert.ToString(reader["DepartmentName"]);
+                        Console.WriteLine($" Teacher: {teacherId}, Name: {firstName} {lastName}, Department: {departmentName}");
                     }
                     reader.Close();
 
@@ -296,4 +326,5 @@ class Program
             }
         }
     }
+
 }

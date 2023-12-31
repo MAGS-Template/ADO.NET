@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Domain_Models
 {
-    public class Grade : Common
+    public class Department : Common
     {
-        public Student Student { get; set; }
-        public Class Class { get; set; }
-        public double Value { get; set; }
+        public string DepartmentName { get; set; }
+
+        public List<Teacher> Teachers { get; set; } 
     }
 }

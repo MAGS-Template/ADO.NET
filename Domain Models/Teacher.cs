@@ -11,6 +11,7 @@ namespace Domain_Models
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public Department Department { get; set; }
         public List<Class> Classes { get; set; }
     }
 }
