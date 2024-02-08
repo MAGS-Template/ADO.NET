@@ -365,3 +365,4 @@ FodyWeavers.xsd
 # Project specific ignores
 /BlazorADONET/Properties/launchSettings.json
 /BlazorADONET/appsettings.json
+ADO.NET\BlazorADONET\appsettings.json
