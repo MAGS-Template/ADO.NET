@@ -368,3 +368,4 @@ FodyWeavers.xsd
 ADO.NET\BlazorADONET\appsettings.json
 appsettings.json
 BlazorADONET/appsettings.json
+*.json
