@@ -1,0 +1,135 @@
+﻿@page "/CRUDPostgres"
+@using System.Data.SqlClient
+@using Domain_Models
+@using Npgsql
+@using Microsoft.Extensions.Configuration
+@inject IConfiguration Configuration
+
+<h1>Database Component</h1>
+
+<input @bind="firstName" placeholder="First Name" />
+<input @bind="lastName" placeholder="Last Name" />
+
+<button @onclick="InsertData">Insert</button>
+
+@if (persons != null)
+{
+    foreach (var person in persons)
+    {
+        <div class="card">
+            <div class="card-body">
+                <div class="card-content">
+                    <h5 class="card-title">PersonID: @person.PersonID</h5>
+                    <div class="name-container">
+                        <p class="first-name">FirstName: @person.FirstName</p>
+                        <p class="last-name">LastName: @person.LastName</p>
+                    </div>
+                </div>
+                <div class="button-container">
+                    <button @onclick="() => EditData(person.PersonID)">Edit</button>
+                    <button @onclick="() => DeleteData(person.PersonID)">Delete</button>
+                </div>
+            </div>
+        </div>
+    }
+}
+
+
+
+@code {
+    private string firstName = "John";
+    private string lastName = "Doe";
+    private List<Person> persons;
+    private string connectionString;
+
+    protected override void OnInitialized()
+    {
+        connectionString = Configuration.GetConnectionString("MyDatabase");
+        ReadData();
+    }
+
+    private void InsertData()
+    {
+        using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
+        {
+            connection.Open();
+
+            string sql = "INSERT INTO Persons (FirstName, LastName) VALUES (@FirstName, @LastName)";
+
+            using (NpgsqlCommand command = new NpgsqlCommand(sql, connection))
+            {
+                command.Parameters.AddWithValue("@FirstName", firstName);
+                command.Parameters.AddWithValue("@LastName", lastName);
+
+                command.ExecuteNonQuery();
+            }
+        }
+        ReadData();
+    }
+
+    private void ReadData()
+    {
+        using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
+        {
+            connection.Open();
+
+            string sql = "SELECT * FROM Persons";
+
+            using (NpgsqlCommand command = new NpgsqlCommand(sql, connection))
+            {
+                using (NpgsqlDataReader reader = command.ExecuteReader())
+                {
+                    persons = new List<Person>();
+                    while (reader.Read())
+                    {
+                        persons.Add(new Person
+                            {
+                                PersonID = Convert.ToInt32(reader["PersonID"]),
+                                FirstName = reader["FirstName"].ToString(),
+                                LastName = reader["LastName"].ToString()
+                            });
+                    }
+                }
+            }
+        }
+    }
+    private void DeleteData(int personID)
+    {
+        using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
+        {
+            connection.Open();
+
+            string sql = "DELETE FROM Persons WHERE PersonID = @PersonID";
+
+            using (NpgsqlCommand command = new NpgsqlCommand(sql, connection))
+            {
+                command.Parameters.AddWithValue("@PersonID", personID);
+
+                command.ExecuteNonQuery();
+            }
+        }
+        ReadData();
+    }
+
+    private void EditData(int personID)
+    {
+
+        using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
+        {
+            connection.Open();
+
+            string sql = "UPDATE Persons SET FirstName = @FirstName, LastName = @LastName WHERE PersonID = @PersonID";
+
+            using (NpgsqlCommand command = new NpgsqlCommand(sql, connection))
+            {
+                command.Parameters.AddWithValue("@FirstName", firstName);
+                command.Parameters.AddWithValue("@LastName", lastName);
+                command.Parameters.AddWithValue("@PersonID", personID);
+
+                command.ExecuteNonQuery();
+            }
+        }
+        ReadData();
+    }
+
+}

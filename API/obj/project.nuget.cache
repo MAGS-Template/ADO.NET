@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "qUnwRvP9DTT3CgdvoZRlhCxJcuccC6RTp7sqDcr5HbM2tTIqJBWg05Fmg8jjkHSSshtJ3qtD6QadaktybAesBQ==",
+  "dgSpecHash": "zPDC1xOQlwK0k2M+Rz3ZvEza6vxUveKNkUE96lAnQxk7yxRtTC5EuDLps4d1TCIhAzOz7+Y8ITGaqXoSmC0mcA==",
   "success": true,
   "projectFilePath": "C:\\Users\\MAGS\\Documents\\GitHub\\ADO.NET\\API\\API-ADONET.csproj",
   "expectedPackageFiles": [
@@ -21,5 +21,16 @@
     "C:\\Users\\MAGS\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\system.security.accesscontrol.4.7.0.nupkg.sha512",
     "C:\\Users\\MAGS\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'System.Data.SqlClient' 4.8.5 has a known high severity vulnerability, https://github.com/advisories/GHSA-98g6-xh36-x2p7",
+      "libraryId": "System.Data.SqlClient",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }

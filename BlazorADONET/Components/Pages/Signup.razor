@@ -1,0 +1,97 @@
+﻿@page "/Signup"
+@using System.Data.SqlClient
+@using BlazorADONET.Services
+@using Domain_Models
+
+<h2>SignUp</h2>
+
+<EditForm Model="@User" OnValidSubmit="HandleValidSubmit" class="form-group">
+    <DataAnnotationsValidator />
+    <div class="form-group">
+        <label for="Email">Email:</label>
+        <InputText id="Email" @bind-Value="@User.Email" class="form-control" />
+        <ValidationMessage For="@(() => User.Email)" class="text-danger" />
+    </div>
+    <div class="form-group">
+        <label for="Password">Password:</label>
+        <InputText id="Password" @bind-Value="@User.Password" type="password" class="form-control" />
+        <ValidationMessage For="@(() => User.Password)" class="text-danger" />
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Sign Up</button>
+</EditForm>
+<br />
+<button @onclick="CreateLoginTable"> Create the login Database </button>
+<br />
+<p> @output </p>
+
+@code {
+    public User User { get; set; } = new User();
+
+    public string output { get; set; }
+
+    string connectionString = $"Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=ADONET;Integrated Security=True;Connect Timeout=30;Encrypt=False;";
+
+    private void HandleValidSubmit()
+    {
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            connection.Open();
+
+            // Check if user with the given email already exists
+            using (SqlCommand checkCommand = new SqlCommand("SELECT COUNT(*) FROM Users WHERE Email = @Email", connection))
+            {
+                checkCommand.Parameters.AddWithValue("@Email", User.Email);
+
+                int result = Convert.ToInt32(checkCommand.ExecuteScalar());
+                if (result > 0)
+                {
+                    output = "User with the given email already exists";
+                } else
+                {
+                    // Insert new user
+                    using (SqlCommand insertCommand = new SqlCommand("INSERT INTO Users (Email, Password) VALUES (@Email, @Password)", connection))
+                    {
+                        insertCommand.Parameters.AddWithValue("@Email", User.Email);
+                        insertCommand.Parameters.AddWithValue("@Password", User.Password);
+
+                        insertCommand.ExecuteNonQuery();
+                    }
+                }
+            }
+
+            
+        }
+    }
+
+
+    private void CreateLoginTable()
+    {
+        SqlConnection con = new SqlConnection(connectionString);
+
+        string query =
+            @"CREATE TABLE Users
+            (
+                ID int IDENTITY(1,1) NOT NULL,
+                Email nvarchar(255) NOT NULL,
+                Password nvarchar(255) NOT NULL,
+                CONSTRAINT pk_id PRIMARY KEY (ID)
+            );";
+        SqlCommand cmd = new SqlCommand(query, con);
+        try
+        {
+            con.Open();
+            cmd.ExecuteNonQuery();
+            Console.WriteLine("Table Created Successfully");
+        }
+        catch (SqlException e)
+        {
+            Console.WriteLine("Error Generated. Details: " + e.ToString());
+        }
+        finally
+        {
+            con.Close();
+            Console.ReadKey();
+        }
+    }
+}

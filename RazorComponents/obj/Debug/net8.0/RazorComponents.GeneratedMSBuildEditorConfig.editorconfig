@@ -9,23 +9,23 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows,browser
 build_property.RootNamespace = RazorComponents
 build_property.RootNamespace = RazorComponents
-build_property.ProjectDir = C:\Users\MAGS\Documents\GitHub\ADO.NET\RazorComponents\
+build_property.ProjectDir = c:\Users\MAGS\Documents\GitHub\ADO.NET\RazorComponents\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\MAGS\Documents\GitHub\ADO.NET\RazorComponents
+build_property.MSBuildProjectDirectory = c:\Users\MAGS\Documents\GitHub\ADO.NET\RazorComponents
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/MAGS/Documents/GitHub/ADO.NET/RazorComponents/_Imports.razor]
+[c:/Users/MAGS/Documents/GitHub/ADO.NET/RazorComponents/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/MAGS/Documents/GitHub/ADO.NET/RazorComponents/Card.razor]
+[c:/Users/MAGS/Documents/GitHub/ADO.NET/RazorComponents/Card.razor]
 build_metadata.AdditionalFiles.TargetPath = Q2FyZC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-n30zzzqsuo
 
-[C:/Users/MAGS/Documents/GitHub/ADO.NET/RazorComponents/NoData.razor]
+[c:/Users/MAGS/Documents/GitHub/ADO.NET/RazorComponents/NoData.razor]
 build_metadata.AdditionalFiles.TargetPath = Tm9EYXRhLnJhem9y
 build_metadata.AdditionalFiles.CssScope = b-waqo359d2h

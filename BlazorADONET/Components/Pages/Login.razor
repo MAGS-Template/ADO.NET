@@ -1,0 +1,56 @@
+﻿@page "/Login"
+@using System.Data.SqlClient
+@using Domain_Models
+
+<h2>Login</h2>
+
+<EditForm Model="@User" OnValidSubmit="HandleValidSubmit" class="form-group">
+    <DataAnnotationsValidator />
+    <div class="form-group">
+        <label for="Email">Email:</label>
+        <InputText id="Email" @bind-Value="@User.Email" class="form-control" />
+        <ValidationMessage For="@(() => User.Email)" class="text-danger" />
+    </div>
+    <div class="form-group">
+        <label for="Password">Password:</label>
+        <InputText id="Password" @bind-Value="@User.Password" type="password" class="form-control" />
+        <ValidationMessage For="@(() => User.Password)" class="text-danger" />
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Log in</button>
+</EditForm>
+<br />
+<p> @output </p>
+@code {
+    public User User { get; set; } = new User();
+
+    public string? output { get; set;}
+
+    string connectionString = $"Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=ADONET;Integrated Security=True;Connect Timeout=30;Encrypt=False;";
+
+    private void HandleValidSubmit()
+    {
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            connection.Open();
+            using (SqlCommand command = new SqlCommand("SELECT COUNT(*) FROM Users WHERE Email = @Email AND Password = @Password", connection))
+            {
+                command.Parameters.AddWithValue("@Email", User.Email);
+                command.Parameters.AddWithValue("@Password", User.Password);
+
+                int result = Convert.ToInt32(command.ExecuteScalar());
+                if (result == 1)
+                {
+                    output = $"Du er nu logget ind som {User.Email} som har ID nummer: {User.Id}";
+                    Console.WriteLine(output);
+
+                }
+                else
+                {
+                    output = "Din kode virkede ikke";
+                    Console.WriteLine(output);
+                }
+            }
+        }
+    }
+}

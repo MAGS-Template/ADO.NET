@@ -224,6 +224,64 @@ main[b-ij1x7eg3z7] {
         color: #757575; /* Lightest grey with 4.5:1 contrast over white */
         line-height: 1.5; /* Space between lines of the paragraph */
     }
+/* _content/BlazorADONET/Components/Pages/CRUD-Postgres.razor.rz.scp.css */
+.card[b-obl7w45bmv] {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+}
+
+input[b-obl7w45bmv] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+    input:focus[b-obl7w45bmv] {
+        border: 1px solid #555;
+    }
+
+button[b-obl7w45bmv] {
+    padding: 10px 20px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 4px;
+    background-color: #0a0a23;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    button:hover[b-obl7w45bmv] {
+        background-color: #002ead;
+    }
+
+    button:active[b-obl7w45bmv] {
+        background-color: #ffbf00;
+    }
+
+.delete-button[b-obl7w45bmv] {
+    text-align: right;
+}
+
+.card-body[b-obl7w45bmv] {
+    display: flex;
+    justify-content: space-between;
+}
+
+.button-container[b-obl7w45bmv] {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.name-container[b-obl7w45bmv] {
+    display: flex;
+    flex-direction: column;
+}
 /* _content/BlazorADONET/Components/Pages/CRUD.razor.rz.scp.css */
 .card[b-y46t81lpuy] {
     border: 1px solid #ccc;
@@ -282,6 +340,7 @@ button[b-y46t81lpuy] {
     display: flex;
     flex-direction: column;
 }
+/* _content/BlazorADONET/Components/Pages/Login.razor.rz.scp.css */
 /* _content/BlazorADONET/Components/Pages/Select.razor.rz.scp.css */
 <style >
 .card[b-i0kpzcyurd] {
@@ -374,3 +433,4 @@ button[b-648mjcf1pl] {
     }
 
 </style[b-648mjcf1pl] >
+/* _content/BlazorADONET/Components/Pages/Signup.razor.rz.scp.css */
