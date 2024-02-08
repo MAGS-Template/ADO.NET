@@ -1,0 +1,57 @@
+.card[b-obl7w45bmv] {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+}
+
+input[b-obl7w45bmv] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+    input:focus[b-obl7w45bmv] {
+        border: 1px solid #555;
+    }
+
+button[b-obl7w45bmv] {
+    padding: 10px 20px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 4px;
+    background-color: #0a0a23;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    button:hover[b-obl7w45bmv] {
+        background-color: #002ead;
+    }
+
+    button:active[b-obl7w45bmv] {
+        background-color: #ffbf00;
+    }
+
+.delete-button[b-obl7w45bmv] {
+    text-align: right;
+}
+
+.card-body[b-obl7w45bmv] {
+    display: flex;
+    justify-content: space-between;
+}
+
+.button-container[b-obl7w45bmv] {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.name-container[b-obl7w45bmv] {
+    display: flex;
+    flex-direction: column;
+}
