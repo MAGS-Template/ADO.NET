@@ -24,6 +24,11 @@ Her indefra er der defineret 4 metoder til at håndtere hver CRUD operation. <br
 <strong>Read</strong> bliver håndteret af <strong>ReadData()</strong><br>
 <strong>Update</strong> bliver håndteret af <strong>EditData(int personID)</strong><br>
 <strong>Delete</strong> bliver håndteret af <strong>DeleteData(int personID)</strong><br>
+
+### CRUD-Postgres
+Her bruger vi en cloud-database. Man kan tilføje en ved at tilføje en appsettings.json fil med en Postgres database fra Neon.tech eller FL0.com
+
+
 ### Select.razor
 
 Her er koden mere struktureret end på CRUD.razor filen. Vi har lagt alt vores database logik ind i Services mappen. Den giver en del mere konfigurering i starten af filen. <br>
