@@ -5,7 +5,6 @@ class Program
 {
     private string firstName = "John";
     private string lastName = "Doe";
-
     static void Main()
     {
         Program program = new Program();
